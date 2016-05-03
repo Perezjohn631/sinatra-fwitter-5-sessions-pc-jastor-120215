@@ -2,10 +2,25 @@
 <html>
   <head>
     <title>Week 4</title>
+    <a href="http://fwitter-177325.nitrousapp.com:9393/">
+    <img src="http://www.bons-plans-voyage-new-york.com/icones/social/social-twitter.svg" alt="Bird" height="42" width="42">
+      </a>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
+    <nav>
+      <ul>
+        <% if logged_in? %>
+            <li>Welcome, <%= current_user.username %></li>
+            <li><a href="/tweet">Post a Tweet!</a></li>
+            <li><a href="/logout">Logout</a></li>
+        <% else %>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+        <% end %>
+      </ul>
+    </nav>
 
     <div class="container">
       <h1>Welcome to Fwitter!</h1>
